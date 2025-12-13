@@ -1,0 +1,6 @@
+[[env]]
+GOBIN = "{{config_root}}/bin"
+_.path = [
+  "{{config_root}}/node_modules/.bin",
+  "{{env.GOBIN}}",
+]

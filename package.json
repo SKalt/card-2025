@@ -1,0 +1,35 @@
+{
+	"name": "card-2025",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "prettier --write .",
+		"lint": "prettier --check ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-vercel": "^6.1.1",
+		"@sveltejs/kit": "^2.48.5",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"mdsvex": "^0.12.6",
+		"prettier": "^3.6.2",
+		"prettier-plugin-svelte": "^3.4.0",
+		"svelte": "^5.43.8",
+		"svelte-check": "^4.3.4",
+		"typescript": "^5.9.3",
+		"vite": "^7.2.2",
+		"vite-plugin-devtools-json": "^1.0.0",
+		"wrangler": "^4.54.0"
+	},
+	"dependencies": {
+		"@protomaps/basemaps": "^5.7.0",
+		"maplibre-gl": "^5.14.0",
+		"pmtiles": "^4.3.0"
+	}
+}
