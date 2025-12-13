@@ -83,12 +83,18 @@
 		/* --max-height:  */
 	}
 	#info {
+		flex-basis: auto;
+		flex-shrink: 1;
+		min-width: max(400px, 33%);
 		margin: 0 1rem;
 		border: 1px solid #eee;
 	}
+	#map {
+		width: 100%;
+		flex: 1 1 auto;
+	}
 	#map,
 	#info {
-		width: 50%;
 		height: 100%;
 		/* height: 90vh; */
 	}
@@ -97,6 +103,7 @@
 			display: block;
 		}
 		#info {
+			min-width: 100%;
 			margin: 1rem 0;
 		}
 		#map,
