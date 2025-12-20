@@ -5,7 +5,7 @@
 	import 'maplibre-gl/dist/maplibre-gl.css';
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
-	import type { FeatureCollection } from 'geojson';
+	import type { Feature, FeatureCollection, Point } from 'geojson';
 
 	const PHILA_URL = 'https://card-2025.r2.kalt.cloud/philadelphia.pmtiles';
 	const proto = new Protocol();
@@ -24,7 +24,25 @@
 		glyphs: 'https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf',
 		layers: layers('protomaps', namedFlavor(dark ? 'black' : 'white'), { lang: 'en' })
 	});
-	import data from '$lib/assets/attractions.geo.json';
+	import d from '$lib/assets/attractions.geo.json';
+	type props = { description: string; tags: string[]; name: string };
+	const data: FeatureCollection<Point, props> = d as any;
+	const tags = JSON.stringify(
+		data.features
+			.flatMap((f) => f.properties.tags)
+			.reduce(
+				(acc, tag) => {
+					if (acc[tag]) acc[tag] += 1;
+					else acc[tag] = 1;
+					return acc;
+				},
+				{} as Record<string, number>
+			),
+		null,
+		2
+	);
+	const selectedTags = writable<string[]>([]);
+	const selectedLocation = writable<Feature<Point, props> | null>(null);
 
 	const forEvent = (m: maplibre.Map, event: string) =>
 		new Promise((resolve) => {
@@ -69,9 +87,19 @@
 				'circle-stroke-color': '#FFFFFF'
 			}
 		});
+		// TODO: filter map by tags
+		// TODO: assign icons based on tags
+		// TODO: cat, book, book-cat icons
+		m.on('mouseenter', 'attractions-layer', (e) => {
+			m.getCanvas().style.cursor = 'pointer';
+		});
+		m.on('mouseleave', 'attractions-layer', (e) => {
+			m.getCanvas().style.cursor = '';
+		});
+		m.on('click', 'attractions-layer', (e) => {
+			selectedLocation.set((e.features?.[0] as any) ?? null);
+		});
 		_map.set(m);
-
-		// TODO: register click callbacks
 	});
 	darkTheme.subscribe((dark) => {
 		let m = $_map;
@@ -87,8 +115,26 @@
 	<div id="container">
 		<div id="map"></div>
 		<div id="info">
-			info
+			<search>
+				<!-- TODO: width 100% -->
+				<!-- TODO: actually search -->
+				<input placeholder="Search attractions..." />
+			</search>
 			<!-- infobar -->
+
+			{#if $selectedLocation}
+				<h2>{$selectedLocation.properties.name}</h2>
+				<p>{$selectedLocation.properties.description}</p>
+				<p>
+					<strong>Tags:</strong>
+					<!-- {#each $selectedLocation.properties.tags as tag, i (tag)}
+						{tag}{i < $selectedLocation.properties.tags.length - 1 ? ', ' : ''}
+					{/each} -->
+				</p>
+			{:else}
+				<p>Select an attraction on the map to see details here.</p>
+			{/if}
+			<pre>{tags}</pre>
 		</div>
 	</div>
 </div>

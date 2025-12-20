@@ -11,6 +11,6 @@ for (let part of raw.split(/"POINT \(/).slice(1)) {
   let _tags = _a.filter(f => f.startsWith("tags: ")).map(t => t.slice(6))
   const tags = _tags[0]?.split(", ").map(t => t.trim()) ?? []
   const description = _a.filter(f => !f.startsWith("tags:"))[0]?.trim()
-  result.features.push({type: "Feature", "geometry": {type: "Point", coordinates: [lon, lat]}, properties: {name}})
+  result.features.push({type: "Feature", "geometry": {type: "Point", coordinates: [lon, lat]}, properties: {name, tags, description}})
 }
 console.log(JSON.stringify(result, null, 2))

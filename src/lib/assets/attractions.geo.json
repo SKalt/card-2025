@@ -11,7 +11,9 @@
         ]
       },
       "properties": {
-        "name": "Porcos Porchetteria"
+        "name": "Porcos Porchetteria",
+        "tags": [],
+        "description": "good pastries; perfect for cancelling out a workout in the Pilates studio across the road.\ntags: food, coffee"
       }
     },
     {
@@ -24,7 +26,12 @@
         ]
       },
       "properties": {
-        "name": "Chick's"
+        "name": "Chick's",
+        "tags": [
+          "food",
+          "drinks"
+        ],
+        "description": "A bar with decent yuppie food. Now that people are moving into the ~yuppie hives~ luxury condos that are sprouting on Washington st, they're liable to be crowded."
       }
     },
     {
@@ -37,7 +44,12 @@
         ]
       },
       "properties": {
-        "name": "The Sidecar Bar & Grille"
+        "name": "The Sidecar Bar & Grille",
+        "tags": [
+          "food",
+          "drinks"
+        ],
+        "description": "If you want to ease someone into having a cheesesteak, their cheesesteak pizza is a good start."
       }
     },
     {
@@ -50,7 +62,12 @@
         ]
       },
       "properties": {
-        "name": "Ants Pants Cafe"
+        "name": "Ants Pants Cafe",
+        "tags": [
+          "coffee",
+          "breakfast"
+        ],
+        "description": "Go for the homefries, stay for the bottomless coffee. Be prepared to pay with cash or venmo."
       }
     },
     {
@@ -63,7 +80,12 @@
         ]
       },
       "properties": {
-        "name": "Sabrina's Cafe - South Street"
+        "name": "Sabrina's Cafe - South Street",
+        "tags": [
+          "breakfast",
+          "brunch"
+        ],
+        "description": "An Experience. It can get pretty crowded."
       }
     },
     {
@@ -76,7 +98,12 @@
         ]
       },
       "properties": {
-        "name": "Carbon Copy"
+        "name": "Carbon Copy",
+        "tags": [
+          "food",
+          "drinks"
+        ],
+        "description": "I heard a story about a pizza place that was a money laundering front for the mob that was so successful that the mob abandoned crime to focus on their more lucrative pie business. This place is like that: Carbon Copy is part brewery, part pizza place, but in my opinion, you go for the pizza."
       }
     },
     {
@@ -89,7 +116,12 @@
         ]
       },
       "properties": {
-        "name": "Clarkville"
+        "name": "Clarkville",
+        "tags": [
+          "food",
+          "drink"
+        ],
+        "description": "Their pizza and beer are good, but the real attraction is the people who brought a kitten on a leash and let them explore."
       }
     },
     {
@@ -102,7 +134,13 @@
         ]
       },
       "properties": {
-        "name": "Cedar Park Cafe"
+        "name": "Cedar Park Cafe",
+        "tags": [
+          "breakfast",
+          "brunch",
+          "coffee"
+        ],
+        "description": "The archetype of a greasy-spoon diner."
       }
     },
     {
@@ -115,7 +153,12 @@
         ]
       },
       "properties": {
-        "name": "Vietnam Café"
+        "name": "Vietnam Café",
+        "tags": [
+          "food",
+          "drinks"
+        ],
+        "description": "Very tasty Asian fusion cuisine specializing in Vietnamese dishes. They have a good space for larger groups. \nNot to be confused with Vientiane Café."
       }
     },
     {
@@ -128,7 +171,11 @@
         ]
       },
       "properties": {
-        "name": "Satellite Cafe"
+        "name": "Satellite Cafe",
+        "tags": [
+          "coffee"
+        ],
+        "description": "Crunchy-granola hole-in-the-wall. Their cookies are surprisingly good."
       }
     },
     {
@@ -141,7 +188,11 @@
         ]
       },
       "properties": {
-        "name": "Spinning Chairs Barber Shop"
+        "name": "Spinning Chairs Barber Shop",
+        "tags": [
+          "experiences"
+        ],
+        "description": "I started going here when we moved to West Philly. It's a full-on spa treatment: shampoo, a shave, skincare, and enough steam-aromatherapy to be considered waterboarding. The haircut's good, too."
       }
     },
     {
@@ -154,7 +205,12 @@
         ]
       },
       "properties": {
-        "name": "Movement Callowhill"
+        "name": "Movement Callowhill",
+        "tags": [
+          "exercise",
+          "experience"
+        ],
+        "description": "A mid-size climbing gym. I'd put it on par with some of the mid-size Central Rock Gym locations."
       }
     },
     {
@@ -167,7 +223,11 @@
         ]
       },
       "properties": {
-        "name": "Mood Cafe"
+        "name": "Mood Cafe",
+        "tags": [
+          "food"
+        ],
+        "description": "College-price indian food. The very nice proprietor gave us separate containers of spicy and non-spicy sauce when he heard we always get mild sauce when we share.\nThe mango lassi is 10/10 and extremely large."
       }
     },
     {
@@ -180,7 +240,11 @@
         ]
       },
       "properties": {
-        "name": "West Philadelphia YMCA"
+        "name": "West Philadelphia YMCA",
+        "tags": [
+          "exercise"
+        ],
+        "description": "YOUNG MAN"
       }
     },
     {
@@ -193,7 +257,12 @@
         ]
       },
       "properties": {
-        "name": "Drip Vietnamese Cafe"
+        "name": "Drip Vietnamese Cafe",
+        "tags": [
+          "coffee",
+          "food"
+        ],
+        "description": "Good Vietnamese coffee and banh mi"
       }
     },
     {
@@ -206,7 +275,11 @@
         ]
       },
       "properties": {
-        "name": "Fu-Wah Mini Market"
+        "name": "Fu-Wah Mini Market",
+        "tags": [
+          "food"
+        ],
+        "description": "Killer banh mi. There's usually a line; be prepared to pay cash."
       }
     },
     {
@@ -219,7 +292,12 @@
         ]
       },
       "properties": {
-        "name": "The Second Mile Center"
+        "name": "The Second Mile Center",
+        "tags": [
+          "experiences",
+          "thrift stores"
+        ],
+        "description": ""
       }
     },
     {
@@ -232,7 +310,11 @@
         ]
       },
       "properties": {
-        "name": "Cinemark University City Penn 6"
+        "name": "Cinemark University City Penn 6",
+        "tags": [
+          "experiences"
+        ],
+        "description": "In the summer, they have half-price tickets on Tuesdays. Consider smuggling in snacks, because their popcorn isn't quite as good as Costco's off-the-shelf movie popcorn while being 1000x the price."
       }
     },
     {
@@ -245,7 +327,12 @@
         ]
       },
       "properties": {
-        "name": "VIX Emporium"
+        "name": "VIX Emporium",
+        "tags": [
+          "experience",
+          "shopping"
+        ],
+        "description": "A shop that specializes in local artists' work. They have the best greeting cards!"
       }
     },
     {
@@ -258,7 +345,11 @@
         ]
       },
       "properties": {
-        "name": "The Last Word Bookshop"
+        "name": "The Last Word Bookshop",
+        "tags": [
+          "used books"
+        ],
+        "description": "They have a friendly cat. They also happen to sell used books."
       }
     },
     {
@@ -271,7 +362,11 @@
         ]
       },
       "properties": {
-        "name": "House of Our Own Books"
+        "name": "House of Our Own Books",
+        "tags": [
+          "used books"
+        ],
+        "description": "A used book store where the books take up every surface of what used to be a house. No cat."
       }
     },
     {
@@ -284,7 +379,10 @@
         ]
       },
       "properties": {
-        "name": "The Fire Works"
+        "name": "The Fire Works",
+        "tags": [
+          "???"
+        ]
       }
     },
     {
@@ -297,7 +395,12 @@
         ]
       },
       "properties": {
-        "name": "Cleo Bagels"
+        "name": "Cleo Bagels",
+        "tags": [
+          "breakfast",
+          "coffee"
+        ],
+        "description": "Fresh bagels made on-site. They have a weekday deal called \"the Trolley Bialy\" on a coffee + bialy combo. It's good (especially the garlic-zataar bialy) but make sure to grab napkins, since they typically add a ton of butter to the bialy."
       }
     },
     {
@@ -310,7 +413,14 @@
         ]
       },
       "properties": {
-        "name": "Clark Park Farmers' Market"
+        "name": "Clark Park Farmers' Market",
+        "tags": [
+          "experiences",
+          "books",
+          "food",
+          "art"
+        ],
+        "description": ""
       }
     },
     {
@@ -323,7 +433,11 @@
         ]
       },
       "properties": {
-        "name": "TACOTACOMEXICANO"
+        "name": "TACOTACOMEXICANO",
+        "tags": [
+          "food"
+        ],
+        "description": "Exactly what it sounds like."
       }
     },
     {
@@ -336,7 +450,11 @@
         ]
       },
       "properties": {
-        "name": "Bottle Shop at Local 44"
+        "name": "Bottle Shop at Local 44",
+        "tags": [
+          "drinks"
+        ],
+        "description": "Exactly what it sounds like: a place to buy bottles of beer/wine. They've got a good selection."
       }
     },
     {
@@ -349,7 +467,11 @@
         ]
       },
       "properties": {
-        "name": "St. Francis De Sales Catholic Church"
+        "name": "St. Francis De Sales Catholic Church",
+        "tags": [
+          "experiences"
+        ],
+        "description": "It has an attractive dome, but the church's wikipedia page has the inside story:\n\n> The Guastavino dome has leaked for the entire life of the church. All of the tiles on the entire dome were replaced in the 1950s by then-pastor Bishop Joseph McShea in an unsuccessful attempt to stop the leaking. It was suggested that the parish go with copper sheathing, but the bishop was reluctant to make such a drastic change.[5] Partners for Sacred Places, a Philadelphia-area interfaith group that works to support the preservation of churches and other houses of worship, is currently working with the parish to restore the dome, the stained-glass windows, and the doors.\n>\n> --https://en.wikipedia.org/wiki/St._Francis_de_Sales_Roman_Catholic_Church_(Philadelphia)"
       }
     },
     {
@@ -362,7 +484,12 @@
         ]
       },
       "properties": {
-        "name": "Wissahickon Valley Park"
+        "name": "Wissahickon Valley Park",
+        "tags": [
+          "experiences",
+          "exercise"
+        ],
+        "description": "A great trail network (in all senses of the word \"great\")"
       }
     },
     {
@@ -375,7 +502,11 @@
         ]
       },
       "properties": {
-        "name": "PAPERtrail Bike Cafe"
+        "name": "PAPERtrail Bike Cafe",
+        "tags": [
+          "coffee"
+        ],
+        "description": "One of three coffee shops for mountain bikers hidden in the Wissahickon trail network. Good espresso, but no AC."
       }
     },
     {
@@ -388,7 +519,9 @@
         ]
       },
       "properties": {
-        "name": "Parkway Central Library"
+        "name": "Parkway Central Library",
+        "tags": [],
+        "description": ""
       }
     },
     {
@@ -401,7 +534,11 @@
         ]
       },
       "properties": {
-        "name": "Book Corner"
+        "name": "Book Corner",
+        "tags": [
+          "used books"
+        ],
+        "description": "Where the Philadelphia Free Library sells books and DVDs they want to get rid of. They have a very old, very friendly cat."
       }
     },
     {
@@ -414,7 +551,11 @@
         ]
       },
       "properties": {
-        "name": "Vientiane Café"
+        "name": "Vientiane Café",
+        "tags": [
+          "food"
+        ],
+        "description": "Very good Lao-Thai food in an intimate space.\nNot to be confused with Vietnam Café."
       }
     },
     {
@@ -427,7 +568,11 @@
         ]
       },
       "properties": {
-        "name": "Watutsi Pub"
+        "name": "Watutsi Pub",
+        "tags": [
+          "drinks"
+        ],
+        "description": "A bit of an open-air dive bar. They do serve the Citywide, though: a special consisting of a can of Pabst Blue Ribbon and a shot of something more potent."
       }
     },
     {
@@ -440,7 +585,11 @@
         ]
       },
       "properties": {
-        "name": "Juanita Kidd Stout Center for Criminal Justice"
+        "name": "Juanita Kidd Stout Center for Criminal Justice",
+        "tags": [
+          "crime"
+        ],
+        "description": "I'm giving this place five stars 'cause I got summoned for jury duty, was given a number, missed the selection cutoff by two. A wild ride from start to finish."
       }
     },
     {
@@ -453,7 +602,11 @@
         ]
       },
       "properties": {
-        "name": "West Philly Tool Library - WPTL"
+        "name": "West Philly Tool Library - WPTL",
+        "tags": [
+          "experiences"
+        ],
+        "description": "We borrowed 90% of the tools needed to get our new house in order from the WPTL! I also took a class there about basic home electrics. It's a community gem."
       }
     },
     {
@@ -466,7 +619,12 @@
         ]
       },
       "properties": {
-        "name": "Four Worlds Bakery"
+        "name": "Four Worlds Bakery",
+        "tags": [
+          "food",
+          "pastries"
+        ],
+        "description": "The nearest local bakery. They make good bread!"
       }
     },
     {
@@ -479,7 +637,11 @@
         ]
       },
       "properties": {
-        "name": "Kingsessing Library"
+        "name": "Kingsessing Library",
+        "tags": [
+          "books"
+        ],
+        "description": "???"
       }
     },
     {
@@ -492,7 +654,12 @@
         ]
       },
       "properties": {
-        "name": "Reading Terminal Market"
+        "name": "Reading Terminal Market",
+        "tags": [
+          "food",
+          "experiences"
+        ],
+        "description": "As seen in National Treasure."
       }
     },
     {
@@ -505,7 +672,11 @@
         ]
       },
       "properties": {
-        "name": "Knock Restaurant and Bar"
+        "name": "Knock Restaurant and Bar",
+        "tags": [
+          "drinks"
+        ],
+        "description": "They make a mean espresso martini."
       }
     },
     {
@@ -518,7 +689,11 @@
         ]
       },
       "properties": {
-        "name": "U Bar"
+        "name": "U Bar",
+        "tags": [
+          "drinks"
+        ],
+        "description": "???"
       }
     },
     {
@@ -531,7 +706,11 @@
         ]
       },
       "properties": {
-        "name": "Habitat for Humanity Philadelphia ReStore"
+        "name": "Habitat for Humanity Philadelphia ReStore",
+        "tags": [
+          "thrift stores"
+        ],
+        "description": "They sell everything **and** the kitchen sink here. When we were painting our new house, we saved at least $100 by using their recycled paint."
       }
     },
     {
@@ -544,7 +723,13 @@
         ]
       },
       "properties": {
-        "name": "Haven Café"
+        "name": "Haven Café",
+        "tags": [
+          "coffee",
+          "breakfast",
+          "brunch"
+        ],
+        "description": "If you walk south on to the end of the Schuylkill trail, you can reward yourself with Haven Cafe's waffles."
       }
     },
     {
@@ -557,7 +742,11 @@
         ]
       },
       "properties": {
-        "name": "Hayashi Sushi"
+        "name": "Hayashi Sushi",
+        "tags": [
+          "food"
+        ],
+        "description": "Pretty good sushi at pretty decent prices. When we last went, someone was giving a tarot reading at the next table over."
       }
     },
     {
@@ -570,7 +759,11 @@
         ]
       },
       "properties": {
-        "name": "30th Street Station"
+        "name": "30th Street Station",
+        "tags": [
+          "transit"
+        ],
+        "description": "One of the rare Amtrak stations that _isn't_ named Penn Station or Union Station."
       }
     },
     {
@@ -583,7 +776,11 @@
         ]
       },
       "properties": {
-        "name": "Love & Honey Fried Chicken"
+        "name": "Love & Honey Fried Chicken",
+        "tags": [
+          "food"
+        ],
+        "description": ""
       }
     },
     {
@@ -596,7 +793,11 @@
         ]
       },
       "properties": {
-        "name": "Don Barriga"
+        "name": "Don Barriga",
+        "tags": [
+          "food",
+          "mexican"
+        ]
       }
     },
     {
@@ -609,7 +810,12 @@
         ]
       },
       "properties": {
-        "name": "Abyssinia"
+        "name": "Abyssinia",
+        "tags": [
+          "food",
+          "experiences"
+        ],
+        "description": ""
       }
     },
     {
@@ -622,7 +828,10 @@
         ]
       },
       "properties": {
-        "name": "Two Locals Brewing"
+        "name": "Two Locals Brewing",
+        "tags": [
+          "drinks"
+        ]
       }
     },
     {
@@ -635,7 +844,12 @@
         ]
       },
       "properties": {
-        "name": "Doggie Style Pets South"
+        "name": "Doggie Style Pets South",
+        "tags": [
+          "cats",
+          "dogs"
+        ],
+        "description": "A local chain of pet-supply stores. This one usually has dogs for adoption up in the window. I'm not sure if the name is great or terrible marketing."
       }
     },
     {
@@ -648,7 +862,10 @@
         ]
       },
       "properties": {
-        "name": "Moustaki Authentic Gyros (Center City)"
+        "name": "Moustaki Authentic Gyros (Center City)",
+        "tags": [
+          "food"
+        ]
       }
     },
     {
@@ -661,7 +878,11 @@
         ]
       },
       "properties": {
-        "name": "Heng Feng Hand Drawn Noodles"
+        "name": "Heng Feng Hand Drawn Noodles",
+        "tags": [
+          "food"
+        ],
+        "description": ""
       }
     },
     {
@@ -674,7 +895,11 @@
         ]
       },
       "properties": {
-        "name": "Franklin Music Hall"
+        "name": "Franklin Music Hall",
+        "tags": [
+          "experiences"
+        ],
+        "description": "There's usually a way to see the stage and lean on something on the balcony near the bar, but the acoustics aren't great."
       }
     },
     {
@@ -687,7 +912,11 @@
         ]
       },
       "properties": {
-        "name": "Chateau Rouge"
+        "name": "Chateau Rouge",
+        "tags": [
+          "food"
+        ],
+        "description": "Unlike its better-known cousin, White Castle, Chateau Rouge serves extremely good Afro-French cuisine. Excellent for special occasions."
       }
     },
     {
@@ -700,7 +929,11 @@
         ]
       },
       "properties": {
-        "name": "Breezy's Deli and Market"
+        "name": "Breezy's Deli and Market",
+        "tags": [
+          "food"
+        ],
+        "description": "Very good elongated sandwiches, or  as we call them in Philadelphia, \"hoagies\". This place notably adds \"hoagie juice\" to their \"hoagies\" for an extra boost."
       }
     },
     {
@@ -713,7 +946,11 @@
         ]
       },
       "properties": {
-        "name": "Milkcrate Cafe"
+        "name": "Milkcrate Cafe",
+        "tags": [
+          "coffee"
+        ],
+        "description": "They also sell records."
       }
     },
     {
@@ -726,7 +963,12 @@
         ]
       },
       "properties": {
-        "name": "Philadelphia Museum of Art"
+        "name": "Philadelphia Museum of Art",
+        "tags": [
+          "experiences",
+          "art"
+        ],
+        "description": "the PhArt has a collection worth visiting. It also is embroiled in a scandal where the current director kicked off a rebranding effort that the board opposed/opposes, wasting at least a million dollars. It's great entertainment!"
       }
     },
     {
@@ -739,7 +981,12 @@
         ]
       },
       "properties": {
-        "name": "Kimmel Center for the Performing Arts"
+        "name": "Kimmel Center for the Performing Arts",
+        "tags": [
+          "music",
+          "experiences"
+        ],
+        "description": ""
       }
     },
     {
@@ -752,7 +999,11 @@
         ]
       },
       "properties": {
-        "name": "Springfield Beer Distributor"
+        "name": "Springfield Beer Distributor",
+        "tags": [
+          "drinks"
+        ],
+        "description": "Pretty much what it sounds like: a giant warehouse full of beer that you can walk around, if you're so inclined. The prices are ok, but not amazing."
       }
     },
     {
@@ -765,7 +1016,12 @@
         ]
       },
       "properties": {
-        "name": "Dock Street Brewery South"
+        "name": "Dock Street Brewery South",
+        "tags": [
+          "food",
+          "drinks"
+        ],
+        "description": ""
       }
     },
     {
@@ -778,7 +1034,9 @@
         ]
       },
       "properties": {
-        "name": "The Fresh Grocer of Grays Ferry"
+        "name": "The Fresh Grocer of Grays Ferry",
+        "tags": [],
+        "description": ""
       }
     },
     {
@@ -791,7 +1049,11 @@
         ]
       },
       "properties": {
-        "name": "Thai Square Restaurant"
+        "name": "Thai Square Restaurant",
+        "tags": [
+          "food"
+        ],
+        "description": "Great curry and outdoor seating! BYOB."
       }
     },
     {
@@ -804,7 +1066,11 @@
         ]
       },
       "properties": {
-        "name": "The Igloo"
+        "name": "The Igloo",
+        "tags": [
+          "ice cream",
+          "food"
+        ]
       }
     },
     {
@@ -817,7 +1083,10 @@
         ]
       },
       "properties": {
-        "name": "OCF Coffee House"
+        "name": "OCF Coffee House",
+        "tags": [
+          "coffee"
+        ]
       }
     },
     {
@@ -830,7 +1099,11 @@
         ]
       },
       "properties": {
-        "name": "Rita's Italian Ice & Frozen Custard"
+        "name": "Rita's Italian Ice & Frozen Custard",
+        "tags": [
+          "ice cream",
+          "food"
+        ]
       }
     },
     {
@@ -843,7 +1116,10 @@
         ]
       },
       "properties": {
-        "name": "Social House"
+        "name": "Social House",
+        "tags": [
+          "coffee"
+        ]
       }
     },
     {
@@ -856,7 +1132,10 @@
         ]
       },
       "properties": {
-        "name": "Rival Bros Coffee Bar"
+        "name": "Rival Bros Coffee Bar",
+        "tags": [
+          "coffee"
+        ]
       }
     },
     {
@@ -869,7 +1148,12 @@
         ]
       },
       "properties": {
-        "name": "Café Lutécia"
+        "name": "Café Lutécia",
+        "tags": [
+          "coffee",
+          "breakfast",
+          "brunch"
+        ]
       }
     },
     {
@@ -882,7 +1166,10 @@
         ]
       },
       "properties": {
-        "name": "Ultimo Coffee"
+        "name": "Ultimo Coffee",
+        "tags": [
+          "coffee"
+        ]
       }
     },
     {
@@ -895,7 +1182,12 @@
         ]
       },
       "properties": {
-        "name": "Grace Tavern"
+        "name": "Grace Tavern",
+        "tags": [
+          "food",
+          "drink"
+        ],
+        "description": "An ok beer-and-burger joint with great outdoor seating."
       }
     },
     {
@@ -908,7 +1200,12 @@
         ]
       },
       "properties": {
-        "name": "Double Knot"
+        "name": "Double Knot",
+        "tags": [
+          "food",
+          "drinks"
+        ],
+        "description": "Good sake deal during happy hour! Also great buns. Shares a kitchen with Graffiti Bar."
       }
     },
     {
@@ -921,7 +1218,12 @@
         ]
       },
       "properties": {
-        "name": "Rowhome Coffee - Pine Street"
+        "name": "Rowhome Coffee - Pine Street",
+        "tags": [
+          "coffee",
+          "breakfast"
+        ],
+        "description": "Get the egg sandwich on a pretzel bun, it's worth it.  It's popular and a small space, so it can get crowded. You can order ahead online."
       }
     },
     {
@@ -934,7 +1236,12 @@
         ]
       },
       "properties": {
-        "name": "Los Camaradas"
+        "name": "Los Camaradas",
+        "tags": [
+          "food",
+          "drinks"
+        ],
+        "description": "Great nachos."
       }
     },
     {
@@ -947,7 +1254,14 @@
         ]
       },
       "properties": {
-        "name": "Bok"
+        "name": "Bok",
+        "tags": [
+          "art",
+          "experiences",
+          "food",
+          "drink"
+        ],
+        "description": "Bok used to be a high school until it was bought by a public-minded millionaire who turned it into art studios and offices for small businesses. It's well worth visiting for the view from the rooftop bar, but also for its biannual open houses."
       }
     },
     {
@@ -960,7 +1274,12 @@
         ]
       },
       "properties": {
-        "name": "Tuck Barre & Yoga Graduate Hospital"
+        "name": "Tuck Barre & Yoga Graduate Hospital",
+        "tags": [
+          "experiences",
+          "exercise."
+        ],
+        "description": ""
       }
     },
     {
@@ -973,7 +1292,11 @@
         ]
       },
       "properties": {
-        "name": "The Fillmore Philadelphia"
+        "name": "The Fillmore Philadelphia",
+        "tags": [
+          "experiences"
+        ],
+        "description": "We went to see Josh Johnson here!"
       }
     },
     {
@@ -986,7 +1309,11 @@
         ]
       },
       "properties": {
-        "name": "Queen Memorial Library"
+        "name": "Queen Memorial Library",
+        "tags": [
+          "books"
+        ],
+        "description": "Not sure which queen. Nice books, though!"
       }
     },
     {
@@ -999,7 +1326,12 @@
         ]
       },
       "properties": {
-        "name": "American Sardine Bar"
+        "name": "American Sardine Bar",
+        "tags": [
+          "food",
+          "drinks"
+        ],
+        "description": "Sardines are a Philly thing. This place has whole charcuterie boards of sardines and pickles, which is an experience."
       }
     },
     {
@@ -1012,7 +1344,11 @@
         ]
       },
       "properties": {
-        "name": "Neighborhood Books"
+        "name": "Neighborhood Books",
+        "tags": [
+          "used books"
+        ],
+        "description": "They have a great selection, and they're almost always running a buy-two-get-one-free special. No cat, though."
       }
     },
     {
@@ -1025,7 +1361,11 @@
         ]
       },
       "properties": {
-        "name": "The Woodlands"
+        "name": "The Woodlands",
+        "tags": [
+          "experiences"
+        ],
+        "description": "While the woodlands is a graveyard, it also serves as a mile-long nature trail. I ran a 26.2x1-mile relay here with the West Philly Runners. _Technically_ I ran a marathon in 2:51:38."
       }
     }
   ]
