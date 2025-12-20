@@ -4,3 +4,6 @@ _.path = [
   "{{config_root}}/node_modules/.bin",
   "{{env.GOBIN}}",
 ]
+
+[tools]
+node = "24"

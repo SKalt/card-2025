@@ -24,9 +24,14 @@
 		glyphs: 'https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf',
 		layers: layers('protomaps', namedFlavor(dark ? 'black' : 'white'), { lang: 'en' })
 	});
-	import * as x from '$lib/assets/attractions.geo.json';
+	import data from '$lib/assets/attractions.geo.json';
 
-	onMount(() => {
+	const forEvent = (m: maplibre.Map, event: string) =>
+		new Promise((resolve) => {
+			m.once(event, () => resolve(true));
+		});
+	onMount(async () => {
+		console.clear();
 		{
 			// listen for system color preference changes
 			// technique from https://robkendal.co.uk/blog/2024-11-21-detecting-os-level-dark-mode/
@@ -43,21 +48,29 @@
 		};
 		const m = new maplibre.Map(config);
 		m.on('error', (e) => {
-			console.log(e);
+			console.error(e);
+		});
+		await forEvent(m, 'load');
+		console.log(data);
+
+		const src = 'attractions';
+		m.addSource(src, {
+			type: 'geojson',
+			data: data as FeatureCollection
 		});
 		m.addLayer({
-			id: 'attractions',
+			id: 'attractions-layer',
 			type: 'circle',
-			source: {
-				type: 'geojson',
-				data: x as FeatureCollection
-			},
+			source: src,
 			paint: {
 				'circle-radius': 6,
-				'circle-color': '#B42222'
+				'circle-color': '#FF5722',
+				'circle-stroke-width': 2,
+				'circle-stroke-color': '#FFFFFF'
 			}
 		});
 		_map.set(m);
+
 		// TODO: register click callbacks
 	});
 	darkTheme.subscribe((dark) => {
