@@ -1,0 +1,1372 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1800744",
+          "39.9393312"
+        ]
+      },
+      "properties": {
+        "name": "Porcos Porchetteria",
+        "description": "good pastries; perfect for cancelling out a workout in the Pilates studio across the road.\ntags: food, coffee",
+        "tags": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1740758",
+          "39.9389298"
+        ]
+      },
+      "properties": {
+        "name": "Chick's",
+        "description": "A bar with decent yuppie food. Now that people are moving into the ~yuppie hives~ luxury condos that are sprouting on Washington st, they're liable to be crowded.",
+        "tags": [
+          "food",
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.179481",
+          "39.9418386"
+        ]
+      },
+      "properties": {
+        "name": "The Sidecar Bar & Grille",
+        "description": "If you want to ease someone into having a cheesesteak, their cheesesteak pizza is a good start.",
+        "tags": [
+          "food",
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.17905139999999",
+          "39.9452668"
+        ]
+      },
+      "properties": {
+        "name": "Ants Pants Cafe",
+        "description": "Go for the homefries, stay for the bottomless coffee. Be prepared to pay with cash or venmo.",
+        "tags": [
+          "coffee",
+          "breakfast"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1771169",
+          "39.9452196"
+        ]
+      },
+      "properties": {
+        "name": "Sabrina's Cafe - South Street",
+        "description": "An Experience. It can get pretty crowded.",
+        "tags": [
+          "breakfast",
+          "brunch"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2226998",
+          "39.9476862"
+        ]
+      },
+      "properties": {
+        "name": "Carbon Copy",
+        "description": "I heard a story about a pizza place that was a money laundering front for the mob that was so successful that the mob abandoned crime to focus on their more lucrative pie business. This place is like that: Carbon Copy is part brewery, part pizza place, but in my opinion, you go for the pizza.",
+        "tags": [
+          "food",
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2093732",
+          "39.9496791"
+        ]
+      },
+      "properties": {
+        "name": "Clarkville",
+        "description": "Their pizza and beer are good, but the real attraction is the people who brought a kitten on a leash and let them explore.",
+        "tags": [
+          "food",
+          "drink"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2219444",
+          "39.9477778"
+        ]
+      },
+      "properties": {
+        "name": "Cedar Park Cafe",
+        "description": "The archetype of a greasy-spoon diner.",
+        "tags": [
+          "breakfast",
+          "brunch",
+          "coffee"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2169524",
+          "39.9481552"
+        ]
+      },
+      "properties": {
+        "name": "Vietnam Café",
+        "description": "Very tasty Asian fusion cuisine specializing in Vietnamese dishes. They have a good space for larger groups. \nNot to be confused with Vientiane Café.",
+        "tags": [
+          "food",
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.22264799999999",
+          "39.94776340000001"
+        ]
+      },
+      "properties": {
+        "name": "Satellite Cafe",
+        "description": "Crunchy-granola hole-in-the-wall. Their cookies are surprisingly good.",
+        "tags": [
+          "coffee"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2267202",
+          "39.9499162"
+        ]
+      },
+      "properties": {
+        "name": "Spinning Chairs Barber Shop",
+        "description": "I started going here when we moved to West Philly. It's a full-on spa treatment: shampoo, a shave, skincare, and enough steam-aromatherapy to be considered waterboarding. The haircut's good, too.",
+        "tags": [
+          "experiences"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1558168",
+          "39.9586048"
+        ]
+      },
+      "properties": {
+        "name": "Movement Callowhill",
+        "description": "A mid-size climbing gym. I'd put it on par with some of the mid-size Central Rock Gym locations.",
+        "tags": [
+          "exercise",
+          "experience"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2158463",
+          "39.9486599"
+        ]
+      },
+      "properties": {
+        "name": "Mood Cafe",
+        "description": "College-price indian food. The very nice proprietor gave us separate containers of spicy and non-spicy sauce when he heard we always get mild sauce when we share.\nThe mango lassi is 10/10 and extremely large.",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2242548",
+          "39.95794069999999"
+        ]
+      },
+      "properties": {
+        "name": "West Philadelphia YMCA",
+        "description": "YOUNG MAN",
+        "tags": [
+          "exercise"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1570804",
+          "39.9563999"
+        ]
+      },
+      "properties": {
+        "name": "Drip Vietnamese Cafe",
+        "description": "Good Vietnamese coffee and banh mi",
+        "tags": [
+          "coffee",
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2169796",
+          "39.9483645"
+        ]
+      },
+      "properties": {
+        "name": "Fu-Wah Mini Market",
+        "description": "Killer banh mi. There's usually a line; be prepared to pay cash.",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.211922",
+          "39.9546767"
+        ]
+      },
+      "properties": {
+        "name": "The Second Mile Center",
+        "description": "",
+        "tags": [
+          "experiences",
+          "thrift stores"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2031153",
+          "39.9536288"
+        ]
+      },
+      "properties": {
+        "name": "Cinemark University City Penn 6",
+        "description": "In the summer, they have half-price tickets on Tuesdays. Consider smuggling in snacks, because their popcorn isn't quite as good as Costco's off-the-shelf movie popcorn while being 1000x the price.",
+        "tags": [
+          "experiences"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2238814",
+          "39.9480116"
+        ]
+      },
+      "properties": {
+        "name": "VIX Emporium",
+        "description": "A shop that specializes in local artists' work. They have the best greeting cards!",
+        "tags": [
+          "experience",
+          "shopping"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2028624",
+          "39.9534149"
+        ]
+      },
+      "properties": {
+        "name": "The Last Word Bookshop",
+        "description": "They have a friendly cat. They also happen to sell used books.",
+        "tags": [
+          "used books"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.20187729999999",
+          "39.9513963"
+        ]
+      },
+      "properties": {
+        "name": "House of Our Own Books",
+        "description": "A used book store where the books take up every surface of what used to be a house. No cat.",
+        "tags": [
+          "used books"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2227004",
+          "39.94765470000001"
+        ]
+      },
+      "properties": {
+        "name": "The Fire Works",
+        "tags": [
+          "???"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.22399949999999",
+          "39.9481179"
+        ]
+      },
+      "properties": {
+        "name": "Cleo Bagels",
+        "description": "Fresh bagels made on-site. They have a weekday deal called \"the Trolley Bialy\" on a coffee + bialy combo. It's good (especially the garlic-zataar bialy) but make sure to grab napkins, since they typically add a ton of butter to the bialy.",
+        "tags": [
+          "breakfast",
+          "coffee"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2091354",
+          "39.9488722"
+        ]
+      },
+      "properties": {
+        "name": "Clark Park Farmers' Market",
+        "description": "",
+        "tags": [
+          "experiences",
+          "books",
+          "food",
+          "art"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2102762",
+          "39.95323"
+        ]
+      },
+      "properties": {
+        "name": "TACOTACOMEXICANO",
+        "description": "Exactly what it sounds like.",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.21032389999999",
+          "39.9527686"
+        ]
+      },
+      "properties": {
+        "name": "Bottle Shop at Local 44",
+        "description": "Exactly what it sounds like: a place to buy bottles of beer/wine. They've got a good selection.",
+        "tags": [
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.21526949999999",
+          "39.9474069"
+        ]
+      },
+      "properties": {
+        "name": "St. Francis De Sales Catholic Church",
+        "description": "It has an attractive dome, but the church's wikipedia page has the inside story:\n\n> The Guastavino dome has leaked for the entire life of the church. All of the tiles on the entire dome were replaced in the 1950s by then-pastor Bishop Joseph McShea in an unsuccessful attempt to stop the leaking. It was suggested that the parish go with copper sheathing, but the bishop was reluctant to make such a drastic change.[5] Partners for Sacred Places, a Philadelphia-area interfaith group that works to support the preservation of churches and other houses of worship, is currently working with the parish to restore the dome, the stained-glass windows, and the doors.\n>\n> --https://en.wikipedia.org/wiki/St._Francis_de_Sales_Roman_Catholic_Church_(Philadelphia)",
+        "tags": [
+          "experiences"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.21733100000002",
+          "40.0562108"
+        ]
+      },
+      "properties": {
+        "name": "Wissahickon Valley Park",
+        "description": "A great trail network (in all senses of the word \"great\")",
+        "tags": [
+          "experiences",
+          "exercise"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.19218769999999",
+          "40.02901689999999"
+        ]
+      },
+      "properties": {
+        "name": "PAPERtrail Bike Cafe",
+        "description": "One of three coffee shops for mountain bikers hidden in the Wissahickon trail network. Good espresso, but no AC.",
+        "tags": [
+          "coffee"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.17104450000001",
+          "39.9595647"
+        ]
+      },
+      "properties": {
+        "name": "Parkway Central Library",
+        "description": "",
+        "tags": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1716354",
+          "39.9600802"
+        ]
+      },
+      "properties": {
+        "name": "Book Corner",
+        "description": "Where the Philadelphia Free Library sells books and DVDs they want to get rid of. They have a very old, very friendly cat.",
+        "tags": [
+          "used books"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2179398",
+          "39.9483778"
+        ]
+      },
+      "properties": {
+        "name": "Vientiane Café",
+        "description": "Very good Lao-Thai food in an intimate space.\nNot to be confused with Vietnam Café.",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2138767",
+          "39.9553831"
+        ]
+      },
+      "properties": {
+        "name": "Watutsi Pub",
+        "description": "A bit of an open-air dive bar. They do serve the Citywide, though: a special consisting of a can of Pabst Blue Ribbon and a shot of something more potent.",
+        "tags": [
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1617883",
+          "39.953465"
+        ]
+      },
+      "properties": {
+        "name": "Juanita Kidd Stout Center for Criminal Justice",
+        "description": "I'm giving this place five stars 'cause I got summoned for jury duty, was given a number, missed the selection cutoff by two. A wild ride from start to finish.",
+        "tags": [
+          "crime"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.200266",
+          "39.9393193"
+        ]
+      },
+      "properties": {
+        "name": "West Philly Tool Library - WPTL",
+        "description": "We borrowed 90% of the tools needed to get our new house in order from the WPTL! I also took a class there about basic home electrics. It's a community gem.",
+        "tags": [
+          "experiences"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2105174",
+          "39.94342779999999"
+        ]
+      },
+      "properties": {
+        "name": "Four Worlds Bakery",
+        "description": "The nearest local bakery. They make good bread!",
+        "tags": [
+          "food",
+          "pastries"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2182174",
+          "39.9420463"
+        ]
+      },
+      "properties": {
+        "name": "Kingsessing Library",
+        "description": "???",
+        "tags": [
+          "books"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.15909839999999",
+          "39.9531593"
+        ]
+      },
+      "properties": {
+        "name": "Reading Terminal Market",
+        "description": "As seen in National Treasure.",
+        "tags": [
+          "food",
+          "experiences"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.160542",
+          "39.9478303"
+        ]
+      },
+      "properties": {
+        "name": "Knock Restaurant and Bar",
+        "description": "They make a mean espresso martini.",
+        "tags": [
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1615315",
+          "39.9476667"
+        ]
+      },
+      "properties": {
+        "name": "U Bar",
+        "description": "???",
+        "tags": [
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1827641",
+          "39.9393988"
+        ]
+      },
+      "properties": {
+        "name": "Habitat for Humanity Philadelphia ReStore",
+        "description": "They sell everything **and** the kitchen sink here. When we were painting our new house, we saved at least $100 by using their recycled paint.",
+        "tags": [
+          "thrift stores"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.20109339999999",
+          "39.9386143"
+        ]
+      },
+      "properties": {
+        "name": "Haven Café",
+        "description": "If you walk south on to the end of the Schuylkill trail, you can reward yourself with Haven Cafe's waffles.",
+        "tags": [
+          "coffee",
+          "breakfast",
+          "brunch"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.21696109999999",
+          "39.9482536"
+        ]
+      },
+      "properties": {
+        "name": "Hayashi Sushi",
+        "description": "Pretty good sushi at pretty decent prices. When we last went, someone was giving a tarot reading at the next table over.",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1818793",
+          "39.9560314"
+        ]
+      },
+      "properties": {
+        "name": "30th Street Station",
+        "description": "One of the rare Amtrak stations that _isn't_ named Penn Station or Union Station.",
+        "tags": [
+          "transit"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.137006",
+          "39.967439"
+        ]
+      },
+      "properties": {
+        "name": "Love & Honey Fried Chicken",
+        "description": "",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2120084",
+          "39.9529874"
+        ]
+      },
+      "properties": {
+        "name": "Don Barriga",
+        "tags": [
+          "food",
+          "mexican"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.21170029999999",
+          "39.9541751"
+        ]
+      },
+      "properties": {
+        "name": "Abyssinia",
+        "description": "",
+        "tags": [
+          "food",
+          "experiences"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1954195",
+          "39.9568535"
+        ]
+      },
+      "properties": {
+        "name": "Two Locals Brewing",
+        "tags": [
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1772041",
+          "39.9452837"
+        ]
+      },
+      "properties": {
+        "name": "Doggie Style Pets South",
+        "description": "A local chain of pet-supply stores. This one usually has dogs for adoption up in the window. I'm not sure if the name is great or terrible marketing.",
+        "tags": [
+          "cats",
+          "dogs"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1661665",
+          "39.9505083"
+        ]
+      },
+      "properties": {
+        "name": "Moustaki Authentic Gyros (Center City)",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.15595139999999",
+          "39.9542007"
+        ]
+      },
+      "properties": {
+        "name": "Heng Feng Hand Drawn Noodles",
+        "description": "",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1497116",
+          "39.95915979999999"
+        ]
+      },
+      "properties": {
+        "name": "Franklin Music Hall",
+        "description": "There's usually a way to see the stage and lean on something on the balcony near the bar, but the acoustics aren't great.",
+        "tags": [
+          "experiences"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1773951",
+          "39.9449727"
+        ]
+      },
+      "properties": {
+        "name": "Chateau Rouge",
+        "description": "Unlike its better-known cousin, White Castle, Chateau Rouge serves extremely good Afro-French cuisine. Excellent for special occasions.",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1813447",
+          "39.9398297"
+        ]
+      },
+      "properties": {
+        "name": "Breezy's Deli and Market",
+        "description": "Very good elongated sandwiches, or  as we call them in Philadelphia, \"hoagies\". This place notably adds \"hoagie juice\" to their \"hoagies\" for an extra boost.",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2126933",
+          "39.9493265"
+        ]
+      },
+      "properties": {
+        "name": "Milkcrate Cafe",
+        "description": "They also sell records.",
+        "tags": [
+          "coffee"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.18096609999999",
+          "39.9655697"
+        ]
+      },
+      "properties": {
+        "name": "Philadelphia Museum of Art",
+        "description": "the PhArt has a collection worth visiting. It also is embroiled in a scandal where the current director kicked off a rebranding effort that the board opposed/opposes, wasting at least a million dollars. It's great entertainment!",
+        "tags": [
+          "experiences",
+          "art"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.165297",
+          "39.9467935"
+        ]
+      },
+      "properties": {
+        "name": "Kimmel Center for the Performing Arts",
+        "description": "",
+        "tags": [
+          "music",
+          "experiences"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1802806",
+          "39.9392079"
+        ]
+      },
+      "properties": {
+        "name": "Springfield Beer Distributor",
+        "description": "Pretty much what it sounds like: a giant warehouse full of beer that you can walk around, if you're so inclined. The prices are ok, but not amazing.",
+        "tags": [
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1796596",
+          "39.9392658"
+        ]
+      },
+      "properties": {
+        "name": "Dock Street Brewery South",
+        "description": "",
+        "tags": [
+          "food",
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.193248",
+          "39.94014050000001"
+        ]
+      },
+      "properties": {
+        "name": "The Fresh Grocer of Grays Ferry",
+        "description": "",
+        "tags": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1853081",
+          "39.9425753"
+        ]
+      },
+      "properties": {
+        "name": "Thai Square Restaurant",
+        "description": "Great curry and outdoor seating! BYOB.",
+        "tags": [
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.17947819999999",
+          "39.9451404"
+        ]
+      },
+      "properties": {
+        "name": "The Igloo",
+        "tags": [
+          "ice cream",
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1717939",
+          "39.94458239999999"
+        ]
+      },
+      "properties": {
+        "name": "OCF Coffee House",
+        "tags": [
+          "coffee"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1669321",
+          "39.9473586"
+        ]
+      },
+      "properties": {
+        "name": "Rita's Italian Ice & Frozen Custard",
+        "tags": [
+          "ice cream",
+          "food"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1771444",
+          "39.9449401"
+        ]
+      },
+      "properties": {
+        "name": "Social House",
+        "tags": [
+          "coffee"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1806443",
+          "39.946499"
+        ]
+      },
+      "properties": {
+        "name": "Rival Bros Coffee Bar",
+        "tags": [
+          "coffee"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1796294",
+          "39.9465792"
+        ]
+      },
+      "properties": {
+        "name": "Café Lutécia",
+        "tags": [
+          "coffee",
+          "breakfast",
+          "brunch"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1790745",
+          "39.9425213"
+        ]
+      },
+      "properties": {
+        "name": "Ultimo Coffee",
+        "tags": [
+          "coffee"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1795764",
+          "39.9451521"
+        ]
+      },
+      "properties": {
+        "name": "Grace Tavern",
+        "description": "An ok beer-and-burger joint with great outdoor seating.",
+        "tags": [
+          "food",
+          "drink"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1621019",
+          "39.9496356"
+        ]
+      },
+      "properties": {
+        "name": "Double Knot",
+        "description": "Good sake deal during happy hour! Also great buns. Shares a kitchen with Graffiti Bar.",
+        "tags": [
+          "food",
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1826221",
+          "39.9476503"
+        ]
+      },
+      "properties": {
+        "name": "Rowhome Coffee - Pine Street",
+        "description": "Get the egg sandwich on a pretzel bun, it's worth it.  It's popular and a small space, so it can get crowded. You can order ahead online.",
+        "tags": [
+          "coffee",
+          "breakfast"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.17973599999999",
+          "39.9407959"
+        ]
+      },
+      "properties": {
+        "name": "Los Camaradas",
+        "description": "Great nachos.",
+        "tags": [
+          "food",
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1604412",
+          "39.9255301"
+        ]
+      },
+      "properties": {
+        "name": "Bok",
+        "description": "Bok used to be a high school until it was bought by a public-minded millionaire who turned it into art studios and offices for small businesses. It's well worth visiting for the view from the rooftop bar, but also for its biannual open houses.",
+        "tags": [
+          "art",
+          "experiences",
+          "food",
+          "drink"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.18038000000001",
+          "39.939689"
+        ]
+      },
+      "properties": {
+        "name": "Tuck Barre & Yoga Graduate Hospital",
+        "description": "",
+        "tags": [
+          "experiences",
+          "exercise."
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1350602",
+          "39.9655615"
+        ]
+      },
+      "properties": {
+        "name": "The Fillmore Philadelphia",
+        "description": "We went to see Josh Johnson here!",
+        "tags": [
+          "experiences"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.1812812",
+          "39.9378995"
+        ]
+      },
+      "properties": {
+        "name": "Queen Memorial Library",
+        "description": "Not sure which queen. Nice books, though!",
+        "tags": [
+          "books"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.173743",
+          "39.9365572"
+        ]
+      },
+      "properties": {
+        "name": "American Sardine Bar",
+        "description": "Sardines are a Philly thing. This place has whole charcuterie boards of sardines and pickles, which is an experience.",
+        "tags": [
+          "food",
+          "drinks"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.173823",
+          "39.944507"
+        ]
+      },
+      "properties": {
+        "name": "Neighborhood Books",
+        "description": "They have a great selection, and they're almost always running a buy-two-get-one-free special. No cat, though.",
+        "tags": [
+          "used books"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-75.2037873",
+          "39.9456674"
+        ]
+      },
+      "properties": {
+        "name": "The Woodlands",
+        "description": "While the woodlands is a graveyard, it also serves as a mile-long nature trail. I ran a 26.2x1-mile relay here with the West Philly Runners. _Technically_ I ran a marathon in 2:51:38.",
+        "tags": [
+          "experiences"
+        ]
+      }
+    }
+  ]
+}

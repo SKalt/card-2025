@@ -27,6 +27,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.1
         version: 6.2.1(svelte@5.45.10)(vite@7.2.7)
+      '@types/geojson':
+        specifier: ^7946.0.16
+        version: 7946.0.16
       mdsvex:
         specifier: ^0.12.6
         version: 0.12.6(svelte@5.45.10)

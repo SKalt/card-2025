@@ -5,7 +5,8 @@
 	import 'maplibre-gl/dist/maplibre-gl.css';
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
-	// FIXME: move to r2
+	import type { FeatureCollection } from 'geojson';
+
 	const PHILA_URL = 'https://card-2025.r2.kalt.cloud/philadelphia.pmtiles';
 	const proto = new Protocol();
 	maplibre.addProtocol('pmtiles', proto.tile);
@@ -23,6 +24,8 @@
 		glyphs: 'https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf',
 		layers: layers('protomaps', namedFlavor(dark ? 'black' : 'white'), { lang: 'en' })
 	});
+	import * as x from '$lib/assets/attractions.geo.json';
+
 	onMount(() => {
 		{
 			// listen for system color preference changes
@@ -41,6 +44,18 @@
 		const m = new maplibre.Map(config);
 		m.on('error', (e) => {
 			console.log(e);
+		});
+		m.addLayer({
+			id: 'attractions',
+			type: 'circle',
+			source: {
+				type: 'geojson',
+				data: x as FeatureCollection
+			},
+			paint: {
+				'circle-radius': 6,
+				'circle-color': '#B42222'
+			}
 		});
 		_map.set(m);
 		// TODO: register click callbacks
