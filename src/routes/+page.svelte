@@ -6,7 +6,7 @@
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 	// FIXME: move to r2
-	const PHILA_URL = 'https://yra7vsjs9nrw0ud7.public.blob.vercel-storage.com/philadelphia.pmtiles';
+	const PHILA_URL = 'https://card-2025.r2.kalt.cloud/philadelphia.pmtiles';
 	const proto = new Protocol();
 	maplibre.addProtocol('pmtiles', proto.tile);
 	const darkTheme = writable(false);
