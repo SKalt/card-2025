@@ -4,14 +4,14 @@
 	import { layers, namedFlavor } from '@protomaps/basemaps';
 	import 'maplibre-gl/dist/maplibre-gl.css';
 	import { onMount } from 'svelte';
-	import { writable } from 'svelte/store';
 	import type { Feature, FeatureCollection, Point } from 'geojson';
-
+	import icons from '$lib/assets/icons/';
+	// ... and then the rest of the icons
 	const PHILA_URL = 'https://card-2025.r2.kalt.cloud/philadelphia.pmtiles';
 	const proto = new Protocol();
 	maplibre.addProtocol('pmtiles', proto.tile);
-	const darkTheme = writable(false);
-	let _map = writable<maplibre.Map | null>(null);
+	let darkTheme = $state(false);
+	let _map: maplibre.Map | null = $state(null);
 	const style = (dark: boolean): maplibre.StyleSpecification => ({
 		version: 8,
 		sources: {
@@ -25,10 +25,19 @@
 		layers: layers('protomaps', namedFlavor(dark ? 'black' : 'white'), { lang: 'en' })
 	});
 	import d from '$lib/assets/attractions.geo.json';
-	type props = { description: string; tags: string[]; name: string };
-	const data: FeatureCollection<Point, props> = d as any;
-	const tags = JSON.stringify(
-		data.features
+	// TODO: add svg icons via process described in https://maplibre.org/maplibre-gl-js/docs/examples/display-a-remote-svg-symbol/
+	const img = async (svgURI: string) => {
+		const i = new Image();
+		const p = new Promise((resolve) => (i.onload = resolve));
+		i.src = svgURI;
+		await p;
+		return i;
+		// return { data: i, width, height };
+	};
+	type Props = { description: string; tags: string[]; name: string; icon: string };
+	const rawData: FeatureCollection<Point, Props> = d as any;
+	const allTags = JSON.stringify(
+		rawData.features
 			.flatMap((f) => f.properties.tags)
 			.reduce(
 				(acc, tag) => {
@@ -41,51 +50,68 @@
 		null,
 		2
 	);
-	const selectedTags = writable<string[]>([]);
-	const selectedLocation = writable<Feature<Point, props> | null>(null);
+	let selectedTags: string[] = $state([]);
+
+	let selectedLocation = $state<Feature<Point, Props> | null>(null);
 
 	const forEvent = (m: maplibre.Map, event: string) =>
 		new Promise((resolve) => {
 			m.once(event, () => resolve(true));
 		});
 	onMount(async () => {
-		console.clear();
-		{
-			// listen for system color preference changes
-			// technique from https://robkendal.co.uk/blog/2024-11-21-detecting-os-level-dark-mode/
-			const _darkMode = window.matchMedia('(prefers-color-scheme: dark)');
-			darkTheme.set(_darkMode.matches);
-			_darkMode.addEventListener('change', (e) => darkTheme.set(e.matches));
-		}
+		// listen for system color preference changes
+		// technique from https://robkendal.co.uk/blog/2024-11-21-detecting-os-level-dark-mode/
+		const _darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+		darkTheme = _darkMode.matches;
 		const config: maplibre.MapOptions = {
 			container: 'map',
 			center: { lat: 39.96373852937114, lng: -75.25713708454445 },
 			zoom: 10.74,
 			// hash: true,
-			style: style($darkTheme)
+			style: style(darkTheme)
 		};
 		const m = new maplibre.Map(config);
-		m.on('error', (e) => {
-			console.error(e);
+		Object.entries(icons).map(async ([name, marker]) =>
+			m.addImage(name, await img(marker), { sdf: true })
+		);
+		_darkMode.addEventListener('change', (e) => {
+			darkTheme = e.matches;
+			if (m.loaded()) {
+				m.style.setState(style(darkTheme));
+				m.redraw(); // FIXME: doesn't work
+				m.setZoom(m.getZoom() + 0.01); // yet this does
+			}
 		});
+		m.on('error', (e) => console.error(e));
 		await forEvent(m, 'load');
-		console.log(data);
-
+		console.log(rawData);
 		const src = 'attractions';
 		m.addSource(src, {
 			type: 'geojson',
-			data: data as FeatureCollection
+			data: rawData
 		});
 		m.addLayer({
 			id: 'attractions-layer',
-			type: 'circle',
+			type: 'symbol',
 			source: src,
-			paint: {
-				'circle-radius': 6,
-				'circle-color': '#FF5722',
-				'circle-stroke-width': 2,
-				'circle-stroke-color': '#FFFFFF'
+			// paint: {
+			// 	'circle-radius': 6,
+			// 	'circle-color': '#FF5722',
+			// 	'circle-stroke-width': 2,
+			// 	'circle-stroke-color': '#FFFFFF'
+			// },
+			layout: {
+				'icon-image': ['get', 'icon'],
+				// 'icon-image': 'marker',
+				'icon-size': 1,
+				'icon-overlap': 'always'
 			}
+			// filter: [
+			// 	'case',
+			// 	['==', ['to-string', ['global-state', 'tag']], ''],
+			// 	true,
+			// 	['in', ['global-state', 'tag'], ['get', 'tags']]
+			// ]
 		});
 		// TODO: filter map by tags
 		// TODO: assign icons based on tags
@@ -97,16 +123,11 @@
 			m.getCanvas().style.cursor = '';
 		});
 		m.on('click', 'attractions-layer', (e) => {
-			selectedLocation.set((e.features?.[0] as any) ?? null);
+			selectedLocation = (e.features?.[0] as any) ?? null;
+			if (selectedLocation)
+				selectedLocation.properties.tags = JSON.parse(selectedLocation.properties.tags as any);
 		});
-		_map.set(m);
-	});
-	darkTheme.subscribe((dark) => {
-		let m = $_map;
-		if (m?.style.setState(style(dark))) {
-			m.redraw(); // FIXME: doesn't work
-			m.setZoom(m.getZoom() + 0.01); // yet this does
-		}
+		_map = m;
 	});
 </script>
 
@@ -122,19 +143,20 @@
 			</search>
 			<!-- infobar -->
 
-			{#if $selectedLocation}
-				<h2>{$selectedLocation.properties.name}</h2>
-				<p>{$selectedLocation.properties.description}</p>
-				<p>
-					<strong>Tags:</strong>
-					<!-- {#each $selectedLocation.properties.tags as tag, i (tag)}
-						{tag}{i < $selectedLocation.properties.tags.length - 1 ? ', ' : ''}
-					{/each} -->
-				</p>
+			{#if selectedLocation}
+				<h2>{selectedLocation.properties.name}</h2>
+				<p>{selectedLocation.properties.description}</p>
+
+				<span>icon: {selectedLocation.properties.icon}</span>
+				<strong>Tags:</strong>
+
+				{#each selectedLocation.properties.tags as tag, i (tag)}
+					<span>{tag}</span>{i < selectedLocation.properties.tags.length - 1 ? ', ' : ''}
+				{/each}
 			{:else}
 				<p>Select an attraction on the map to see details here.</p>
 			{/if}
-			<pre>{tags}</pre>
+			<pre>{allTags}</pre>
 		</div>
 	</div>
 </div>
@@ -159,7 +181,7 @@
 	#info {
 		flex-basis: auto;
 		flex-shrink: 1;
-		min-width: max(400px, 33%);
+		width: max(400px, 33%);
 		margin: 0 1rem;
 		border: 1px solid #eee;
 	}
@@ -177,7 +199,6 @@
 			display: block;
 		}
 		#info {
-			min-width: 100%;
 			margin: 1rem 0;
 		}
 		#map,
