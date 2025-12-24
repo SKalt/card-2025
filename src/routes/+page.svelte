@@ -46,18 +46,32 @@
 					return acc;
 				},
 				{} as Record<string, number>
-			)).sort(([,a], [,b]) => a > b ? -1 : b < a ? 1 : 0);
+			)
+	).sort(([, a], [, b]) => (a > b ? -1 : b < a ? 1 : 0));
 	let selectedTag: string | null = $state(null);
-  $effect(() => {
-    _map?.setGlobalStateProperty('tag', selectedTag)
-    if (!_map) selectedTag = null;
-  })
+	$effect(() => {
+		_map?.setGlobalStateProperty('tag', selectedTag);
+		if (!_map) selectedTag = null;
+	});
 	let selectedLocation = $state<Feature<Point, Props> | null>(null);
 
 	const forEvent = (m: maplibre.Map, event: string) =>
 		new Promise((resolve) => {
 			m.once(event, () => resolve(true));
 		});
+	const handleSearchInput = (e: Event) => {
+		if ((e as InputEvent).inputType == 'insertReplacementText') {
+			// an option was selected
+			const f = rawData.features.find((f) => f.properties.name === (e as InputEvent).data)!;
+			_map?.easeTo({
+				zoom: 20,
+				center: {
+					lng: f.geometry.coordinates[0],
+					lat: f.geometry.coordinates[1]
+				}
+			});
+		}
+	};
 	onMount(async () => {
 		// listen for system color preference changes
 		// technique from https://robkendal.co.uk/blog/2024-11-21-detecting-os-level-dark-mode/
@@ -103,8 +117,8 @@
 			layout: {
 				'icon-image': ['get', 'icon'],
 				// 'icon-image': 'marker',
-				'icon-size': 1,
-				'icon-overlap': 'always'
+				'icon-size': 1, // TODO: make this depend on zoom
+				'icon-overlap': 'cooperative'
 			},
 			filter: [
 				'case',
@@ -133,34 +147,52 @@
 	<div id="container">
 		<div id="map"></div>
 		<div id="info">
-			<search>
-				<!-- TODO: width 100% -->
-				<!-- TODO: actually search -->
-				<input placeholder="Search attractions..." />
+			<search style="width: 100%">
+				<input
+					style="width: 100%"
+					type="search"
+					list="x"
+					placeholder="Search attractions..."
+					oninput={handleSearchInput}
+				/>
 			</search>
+			<datalist id="x">
+				{#each rawData.features as f}
+					<option>
+						{f.properties.name}
+					</option>
+				{/each}
+				<option></option>
+			</datalist>
 			<!-- infobar -->
 
 			{#if selectedLocation}
 				<h2>{selectedLocation.properties.name}</h2>
 				<p>{selectedLocation.properties.description}</p>
 
-				<span>icon: {selectedLocation.properties.icon}</span>
+				<!--icon: {selectedLocation.properties.icon} -->
 				<strong>Tags:</strong>
 
 				{#each selectedLocation.properties.tags as tag, i (tag)}
-					<span>{tag}</span>{i < selectedLocation.properties.tags.length - 1 ? ', ' : ''}
+					<span class={{ tag: true, selected: tag == selectedTag }}>{tag}</span>{i <
+					selectedLocation.properties.tags.length - 1
+						? ', '
+						: ''}
 				{/each}
 			{:else}
 				<p>Select an attraction on the map to see details here.</p>
 			{/if}
 			<div>
-        {#each allTags as [tag, count]}
-          <button
-            class={{tag: true, selected: tag == selectedTag}}
-            onclick={() => {
-              tag !== selectedTag ? (selectedTag = tag) : (selectedTag = null)}}><span>{tag}</span><span>{count}</span></button>
-        {/each}
-      </div>
+				<p>Click a button to filter to a specific tag</p>
+				{#each allTags as [tag, count]}
+					<button
+						class={{ tag: true, selected: tag == selectedTag }}
+						onclick={() => {
+							tag !== selectedTag ? (selectedTag = tag) : (selectedTag = null);
+						}}><span>{tag}</span><span>{count}</span></button
+					>
+				{/each}
+			</div>
 		</div>
 	</div>
 </div>
@@ -211,10 +243,10 @@
 			height: 50%;
 		}
 	}
-  .tag > span:first-child {
-    margin-right: 1ch;
-  }
-  .tag.selected {
-    font-weight: bold;
-  }
+	.tag > span:first-child {
+		margin-right: 1ch;
+	}
+	.tag.selected {
+		font-weight: bold;
+	}
 </style>
