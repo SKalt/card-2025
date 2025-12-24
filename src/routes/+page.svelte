@@ -54,7 +54,37 @@
 		if (!_map) selectedTag = null;
 	});
 	let selectedLocation = $state<Feature<Point, Props> | null>(null);
+	const iconColors: Record<keyof typeof icons, string> = {
+		art: '#00ff48',
+		cat: 'black',
+		cinema: 'black',
+		fitness: 'black',
+		cross: 'rebeccapurple',
+		cafe: 'brown',
+		asian: 'black',
+		bakery: 'wheat',
+		bar: 'silver',
+		beer: 'brown', // TODO: differentiate
+		books: 'gold',
+		dog: 'brown',
+		burger: 'tan',
 
+		hairdresser: 'silver',
+
+		hospital: 'red',
+
+		iceCream: 'aqua',
+
+		marker: 'black',
+		museum: 'gray',
+		music: 'aqua', // FIXME
+		park: 'forestgreen',
+		pizza: 'red',
+		rail: 'gray',
+		restaurant: 'silver',
+		shop: 'tan',
+		theatre: 'gray'
+	};
 	const forEvent = (m: maplibre.Map, event: string) =>
 		new Promise((resolve) => {
 			m.once(event, () => resolve(true));
@@ -81,7 +111,7 @@
 			container: 'map',
 			center: { lat: 39.96373852937114, lng: -75.25713708454445 },
 			zoom: 10.74,
-			// hash: true,
+			hash: true,
 			style: style(darkTheme)
 		};
 		const m = new maplibre.Map(config);
@@ -92,7 +122,7 @@
 			darkTheme = e.matches;
 			if (m.loaded()) {
 				m.style.setState(style(darkTheme));
-				m.redraw(); // FIXME: doesn't work
+				m.redraw(); // <- doesn't work; map stays in previous color scheme
 				m.setZoom(m.getZoom() + 0.01); // yet this does
 			}
 		});
@@ -108,16 +138,22 @@
 			id: 'attractions-layer',
 			type: 'symbol',
 			source: src,
-			// paint: {
-			// 	'circle-radius': 6,
-			// 	'circle-color': '#FF5722',
-			// 	'circle-stroke-width': 2,
-			// 	'circle-stroke-color': '#FFFFFF'
-			// },
+			paint: {
+				'icon-color': [
+					'case',
+					...((() => {
+						type Icon = keyof typeof icons;
+						const eq = (icon: Icon) => ['==', ['get', 'icon'], icon];
+						const cx = (icon: Icon) => [eq(icon), iconColors[icon]];
+						return Object.entries(iconColors).flatMap(([icon, color]) => [eq(icon as Icon), color]);
+					})() as any),
+					'black'
+				] as maplibre.DataDrivenPropertyValueSpecification<string>
+			},
 			layout: {
 				'icon-image': ['get', 'icon'],
 				// 'icon-image': 'marker',
-				'icon-size': 1, // TODO: make this depend on zoom
+				// 'icon-size': ['case', ['<=', 'zoom', 11], 1, ['<=', 'zoom', 12], 1.5, 2], // TODO: make this depend on zoom
 				'icon-overlap': 'cooperative'
 			},
 			filter: [
@@ -147,23 +183,6 @@
 	<div id="container">
 		<div id="map"></div>
 		<div id="info">
-			<search style="width: 100%">
-				<input
-					style="width: 100%"
-					type="search"
-					list="x"
-					placeholder="Search attractions..."
-					oninput={handleSearchInput}
-				/>
-			</search>
-			<datalist id="x">
-				{#each rawData.features as f}
-					<option>
-						{f.properties.name}
-					</option>
-				{/each}
-				<option></option>
-			</datalist>
 			<!-- infobar -->
 
 			{#if selectedLocation}
@@ -182,6 +201,23 @@
 			{:else}
 				<p>Select an attraction on the map to see details here.</p>
 			{/if}
+			<search style="width: 100%">
+				<input
+					style="width: 100%"
+					type="search"
+					list="x"
+					placeholder="Search attractions..."
+					oninput={handleSearchInput}
+				/>
+				<datalist id="x">
+					{#each rawData.features as f}
+						<option>
+							{f.properties.name}
+						</option>
+					{/each}
+					<option></option>
+				</datalist>
+			</search>
 			<div>
 				<p>Click a button to filter to a specific tag</p>
 				{#each allTags as [tag, count]}
@@ -248,5 +284,8 @@
 	}
 	.tag.selected {
 		font-weight: bold;
+	}
+	.temp {
+		color: forestgreen;
 	}
 </style>
