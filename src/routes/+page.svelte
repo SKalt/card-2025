@@ -36,7 +36,7 @@
 	};
 	type Props = { description: string; tags: string[]; name: string; icon: string };
 	const rawData: FeatureCollection<Point, Props> = d as any;
-	const allTags = JSON.stringify(
+	const allTags = Object.entries(
 		rawData.features
 			.flatMap((f) => f.properties.tags)
 			.reduce(
@@ -46,12 +46,12 @@
 					return acc;
 				},
 				{} as Record<string, number>
-			),
-		null,
-		2
-	);
-	let selectedTags: string[] = $state([]);
-
+			)).sort(([,a], [,b]) => a > b ? -1 : b < a ? 1 : 0);
+	let selectedTag: string | null = $state(null);
+  $effect(() => {
+    _map?.setGlobalStateProperty('tag', selectedTag)
+    if (!_map) selectedTag = null;
+  })
 	let selectedLocation = $state<Feature<Point, Props> | null>(null);
 
 	const forEvent = (m: maplibre.Map, event: string) =>
@@ -105,17 +105,14 @@
 				// 'icon-image': 'marker',
 				'icon-size': 1,
 				'icon-overlap': 'always'
-			}
-			// filter: [
-			// 	'case',
-			// 	['==', ['to-string', ['global-state', 'tag']], ''],
-			// 	true,
-			// 	['in', ['global-state', 'tag'], ['get', 'tags']]
-			// ]
+			},
+			filter: [
+				'case',
+				['==', ['to-string', ['global-state', 'tag']], ''],
+				true,
+				['in', ['global-state', 'tag'], ['get', 'tags']]
+			]
 		});
-		// TODO: filter map by tags
-		// TODO: assign icons based on tags
-		// TODO: cat, book, book-cat icons
 		m.on('mouseenter', 'attractions-layer', (e) => {
 			m.getCanvas().style.cursor = 'pointer';
 		});
@@ -156,7 +153,14 @@
 			{:else}
 				<p>Select an attraction on the map to see details here.</p>
 			{/if}
-			<pre>{allTags}</pre>
+			<div>
+        {#each allTags as [tag, count]}
+          <button
+            class={{tag: true, selected: tag == selectedTag}}
+            onclick={() => {
+              tag !== selectedTag ? (selectedTag = tag) : (selectedTag = null)}}><span>{tag}</span><span>{count}</span></button>
+        {/each}
+      </div>
 		</div>
 	</div>
 </div>
@@ -207,4 +211,10 @@
 			height: 50%;
 		}
 	}
+  .tag > span:first-child {
+    margin-right: 1ch;
+  }
+  .tag.selected {
+    font-weight: bold;
+  }
 </style>
