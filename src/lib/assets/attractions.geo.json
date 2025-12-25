@@ -471,7 +471,7 @@
         "tags": [
           "experiences"
         ],
-        "description": "It has an attractive dome, but the church's wikipedia page has the inside story:\n\n> The Guastavino dome has leaked for the entire life of the church. All of the tiles on the entire dome were replaced in the 1950s by then-pastor Bishop Joseph McShea in an unsuccessful attempt to stop the leaking. It was suggested that the parish go with copper sheathing, but the bishop was reluctant to make such a drastic change.[5] Partners for Sacred Places, a Philadelphia-area interfaith group that works to support the preservation of churches and other houses of worship, is currently working with the parish to restore the dome, the stained-glass windows, and the doors.\n>\n> --https://en.wikipedia.org/wiki/St._Francis_de_Sales_Roman_Catholic_Church_(Philadelphia)",
+        "description": "It has an attractive dome, but the church's wikipedia page has the inside story:\n\n<blockquote> The Guastavino dome has leaked for the entire life of the church. All of the tiles on the entire dome were replaced in the 1950s by then-pastor Bishop Joseph McShea in an unsuccessful attempt to stop the leaking. It was suggested that the parish go with copper sheathing, but the bishop was reluctant to make such a drastic change. Partners for Sacred Places, a Philadelphia-area interfaith group that works to support the preservation of churches and other houses of worship, is currently working with the parish to restore the dome, the stained-glass windows, and the doors.<br> -- <a href=\"https://en.wikipedia.org/wiki/St._Francis_de_Sales_Roman_Catholic_Church_(Philadelphia)\" target=_blank>wikipedia</a></blockquote>",
         "icon": "cross"
       }
     },
@@ -729,7 +729,7 @@
         "tags": [
           "thrift stores"
         ],
-        "description": "They sell everything **and** the kitchen sink here. When we were painting our new house, we saved at least $100 by using their recycled paint.",
+        "description": "They sell everything and the kitchen sink here (literally). When we were painting our new house, we saved at least $100 by using their recycled paint.",
         "icon": "shop"
       }
     },
@@ -1340,7 +1340,7 @@
           "experiences",
           "parks"
         ],
-        "description": "While the woodlands is a graveyard, it also serves as a mile-long nature trail. I ran a 26.2x1-mile relay here with the West Philly Runners. _Technically_ I ran a marathon in 2:51:38.",
+        "description": "While the woodlands is a graveyard, it also serves as a mile-long nature trail. I ran a 26.2x1-mile relay here with the West Philly Runners. Technically, I ran a marathon in 2:51:38.",
         "icon": "park"
       }
     },

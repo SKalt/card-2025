@@ -48,7 +48,7 @@
 				},
 				{} as Record<string, number>
 			)
-	).sort(([, a], [, b]) => (a > b ? -1 : b < a ? 1 : 0));
+	).sort((a, b) => (a[1] > b[1] ? -1 : b[1] > a[1] ? 1 : 0));
 	let selectedTag: string | null = $state(null);
 	$effect(() => {
 		_map?.setGlobalStateProperty('tag', selectedTag);
@@ -57,29 +57,6 @@
 	let selectedLocation = $state<Feature<Point, Props> | null>(null);
 	type Icon = keyof typeof icons;
 
-	const iconCounts = Object.entries(
-		rawData.features
-			.map((f) => f.properties.icon)
-			.reduce(
-				(a, r) => {
-					if (!a[r]) a[r] = 0;
-					a[r]++;
-					return a;
-				},
-				{} as Record<string, number>
-			)
-	).sort(([, a], [, b]) => (b > a ? 1 : b < a ? -1 : 0));
-	// const tagColors: Record<string, string> = {
-	// 	food: '#5e4fa2',
-	// 	coffee: '#3288bd',
-	// 	breakfast: '#3288bd',
-	// 	books: '#66c2a5',
-	// 	cat: 'black',
-	// 	drinks: '#abdda4',
-	// 	music: '#e6f598',
-	// 	pizza: 'red',
-	// 	bakery: 'wheat'
-	// };
 	const iconColors: Record<Icon, string> = {
 		restaurant: '#5e4fa2',
 		cafe: '#3288bd',
@@ -89,17 +66,17 @@
 		music: '#e6f598',
 		pizza: '#d53e4f', // 'red',
 		fitness: 'black',
-		park: 'forestgreen',
+		park: '#66c2a5',
 		art: '#e6f598',
 		historic: '#fdae61',
 
-		cinema: 'black',
+		cinema: '#e6f598',
 		cross: '#9e0142',
-		asian: 'black',
+		asian: '#5e4fa2',
 		bakery: '#fee08b',
-		beer: 'brown', // TODO: differentiate
+		beer: 'brown', // note: not used.
 		dog: 'brown',
-		burger: 'tan',
+		burger: 'tan', // not used
 		hairdresser: 'silver',
 		hospital: '#d53e4f',
 		iceCream: 'aqua',
@@ -107,7 +84,7 @@
 		museum: 'gray',
 		rail: 'gray',
 		shop: 'tan',
-		theatre: 'gray'
+		theatre: '#e6f598'
 	};
 	const tagColors = Object.entries(
 		rawData.features
@@ -199,7 +176,7 @@
 			},
 			layout: {
 				'icon-image': ['get', 'icon'],
-				'icon-size': ['step', ['zoom'], 1, 12, 1.5, 14, 2],
+				'icon-size': ['step', ['zoom'], 0.1, 12, 0.15, 14, 0.2],
 				'icon-overlap': 'cooperative'
 			},
 			filter: [
@@ -234,9 +211,8 @@
 			<hr />
 			{#if selectedLocation}
 				<h2>{selectedLocation.properties.name}</h2>
-				<p>{selectedLocation.properties.description}</p>
+				<p>{@html selectedLocation.properties.description}</p>
 
-				<!--icon: {selectedLocation.properties.icon} -->
 				<strong>Tags:</strong>
 
 				{#each selectedLocation.properties.tags as tag, i (tag)}
@@ -278,10 +254,6 @@
 					>
 				{/each}
 			</div>
-			<!-- <hr />
-			{#each iconCounts as [icon, count]}
-				<button><span>{icon}</span><span>{count}</span></button>
-			{/each} -->
 		</div>
 	</div>
 </div>
