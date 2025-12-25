@@ -12,6 +12,7 @@
 	maplibre.addProtocol('pmtiles', proto.tile);
 	let darkTheme = $state(false);
 	let _map: maplibre.Map | null = $state(null);
+	let _zoom = $state(0);
 	const style = (dark: boolean): maplibre.StyleSpecification => ({
 		version: 8,
 		sources: {
@@ -25,7 +26,7 @@
 		layers: layers('protomaps', namedFlavor(dark ? 'black' : 'white'), { lang: 'en' })
 	});
 	import d from '$lib/assets/attractions.geo.json';
-	// TODO: add svg icons via process described in https://maplibre.org/maplibre-gl-js/docs/examples/display-a-remote-svg-symbol/
+	// see https://maplibre.org/maplibre-gl-js/docs/examples/display-a-remote-svg-symbol/
 	const img = async (svgURI: string) => {
 		const i = new Image();
 		const p = new Promise((resolve) => (i.onload = resolve));
@@ -54,37 +55,83 @@
 		if (!_map) selectedTag = null;
 	});
 	let selectedLocation = $state<Feature<Point, Props> | null>(null);
-	const iconColors: Record<keyof typeof icons, string> = {
-		art: '#00ff48',
+	type Icon = keyof typeof icons;
+
+	const iconCounts = Object.entries(
+		rawData.features
+			.map((f) => f.properties.icon)
+			.reduce(
+				(a, r) => {
+					if (!a[r]) a[r] = 0;
+					a[r]++;
+					return a;
+				},
+				{} as Record<string, number>
+			)
+	).sort(([, a], [, b]) => (b > a ? 1 : b < a ? -1 : 0));
+	// const tagColors: Record<string, string> = {
+	// 	food: '#5e4fa2',
+	// 	coffee: '#3288bd',
+	// 	breakfast: '#3288bd',
+	// 	books: '#66c2a5',
+	// 	cat: 'black',
+	// 	drinks: '#abdda4',
+	// 	music: '#e6f598',
+	// 	pizza: 'red',
+	// 	bakery: 'wheat'
+	// };
+	const iconColors: Record<Icon, string> = {
+		restaurant: '#5e4fa2',
+		cafe: '#3288bd',
+		books: '#66c2a5',
 		cat: 'black',
-		cinema: 'black',
+		bar: '#abdda4',
+		music: '#e6f598',
+		pizza: '#d53e4f', // 'red',
 		fitness: 'black',
-		cross: 'rebeccapurple',
-		cafe: 'brown',
+		park: 'forestgreen',
+		art: '#e6f598',
+		historic: '#fdae61',
+
+		cinema: 'black',
+		cross: '#9e0142',
 		asian: 'black',
-		bakery: 'wheat',
-		bar: 'silver',
+		bakery: '#fee08b',
 		beer: 'brown', // TODO: differentiate
-		books: 'gold',
 		dog: 'brown',
 		burger: 'tan',
-
 		hairdresser: 'silver',
-
-		hospital: 'red',
-
+		hospital: '#d53e4f',
 		iceCream: 'aqua',
-
 		marker: 'black',
 		museum: 'gray',
-		music: 'aqua', // FIXME
-		park: 'forestgreen',
-		pizza: 'red',
 		rail: 'gray',
-		restaurant: 'silver',
 		shop: 'tan',
 		theatre: 'gray'
 	};
+	const tagColors = Object.entries(
+		rawData.features
+			.map((f) => [f.properties.tags, iconColors[f.properties.icon as Icon]] as [string[], string])
+			.reduce(
+				(a, [ts, c]) => {
+					for (let t of ts) {
+						if (!a[t]) a[t] = {};
+						if (!a[t][c]) a[t][c] = 0;
+						a[t][c]++;
+					}
+					return a;
+				},
+				{} as Record<string, Record<string, number>>
+			)
+	).reduce(
+		(a, [t, cs]) => {
+			let color = Object.entries(cs).sort(([, a], [, b]) => (b > a ? 1 : b < a ? -1 : 1))[0][0];
+			const dark = ['black', '#5e4fa2', '#3288bd'];
+			a[t] = [dark.includes(color) ? '#fff' : '#000', color];
+			return a;
+		},
+		{} as Record<string, [string, string]>
+	);
 	const forEvent = (m: maplibre.Map, event: string) =>
 		new Promise((resolve) => {
 			m.once(event, () => resolve(true));
@@ -152,8 +199,7 @@
 			},
 			layout: {
 				'icon-image': ['get', 'icon'],
-				// 'icon-image': 'marker',
-				// 'icon-size': ['case', ['<=', 'zoom', 11], 1, ['<=', 'zoom', 12], 1.5, 2], // TODO: make this depend on zoom
+				'icon-size': ['step', ['zoom'], 1, 12, 1.5, 14, 2],
 				'icon-overlap': 'cooperative'
 			},
 			filter: [
@@ -181,10 +227,11 @@
 <div id="box">
 	<h1>Happy Holidays from Philadelphia, PA!</h1>
 	<div id="container">
+		<!-- TODO: seasons greetings, overview of concept -->
 		<div id="map"></div>
 		<div id="info">
 			<!-- infobar -->
-
+			<hr />
 			{#if selectedLocation}
 				<h2>{selectedLocation.properties.name}</h2>
 				<p>{selectedLocation.properties.description}</p>
@@ -201,6 +248,7 @@
 			{:else}
 				<p>Select an attraction on the map to see details here.</p>
 			{/if}
+			<hr />
 			<search style="width: 100%">
 				<input
 					style="width: 100%"
@@ -223,12 +271,17 @@
 				{#each allTags as [tag, count]}
 					<button
 						class={{ tag: true, selected: tag == selectedTag }}
+						style={`background-color: ${tagColors[tag][1]}; color: ${tagColors[tag][0]};`}
 						onclick={() => {
 							tag !== selectedTag ? (selectedTag = tag) : (selectedTag = null);
 						}}><span>{tag}</span><span>{count}</span></button
 					>
 				{/each}
 			</div>
+			<!-- <hr />
+			{#each iconCounts as [icon, count]}
+				<button><span>{icon}</span><span>{count}</span></button>
+			{/each} -->
 		</div>
 	</div>
 </div>
@@ -282,10 +335,14 @@
 	.tag > span:first-child {
 		margin-right: 1ch;
 	}
+	.tag {
+		border: none;
+		border-radius: 2px;
+		margin: 2px;
+	}
 	.tag.selected {
 		font-weight: bold;
-	}
-	.temp {
-		color: forestgreen;
+		border: 1px solid black;
+		margin: 1px;
 	}
 </style>

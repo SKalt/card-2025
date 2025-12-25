@@ -29,7 +29,7 @@ for (let f of result.features) {
   if (p.tags.includes("museum")) p.icon = "museum"
   if (p.tags.includes("exercise")) p.icon = "fitness"
   if (p.tags.includes("parks")) p.icon = "park"
-  if (p.tags.includes("ice cream")) p.icon = "ice-cream"
+  if (p.tags.includes("ice cream")) p.icon = "iceCream"
   if (p.tags.includes('art')) p.icon = "art"
   if (p.tags.includes("dogs")) p.icon = "dog"
   if (p.tags.some(t => t.includes("books"))) p.icon = "books"

@@ -24,31 +24,33 @@ import theatre from './theatre.svg?url';
 import music from './music.svg?url';
 import hospital from './hospital.svg?url';
 import rail from './rail.svg?url';
+import historic from "./libertyBell.svg?url"
 
 export default {
 	art,
+	asian,
 	bakery,
 	bar,
 	beer,
+	books,
+	burger,
 	cafe,
 	cat,
 	cinema,
+	cross,
 	dog,
-	burger,
 	fitness,
 	hairdresser,
+  historic,
+	hospital,
 	iceCream,
-	books,
 	marker,
 	museum,
+	music,
 	park,
-	cross,
-	asian,
 	pizza,
+	rail,
 	restaurant,
 	shop,
 	theatre,
-	music,
-	hospital,
-	rail
 };
