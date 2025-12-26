@@ -11,6 +11,14 @@
 	const proto = new Protocol();
 	maplibre.addProtocol('pmtiles', proto.tile);
 	let darkTheme = $state(false);
+	let dialog: HTMLDialogElement | null = $state(null);
+	onMount(() => {
+		const key = 'dialog';
+		// if (!localStorage.getItem(key)) {
+		dialog?.showModal();
+		// }
+		// localStorage.setItem(key, 'done');
+	});
 	let _map: maplibre.Map | null = $state(null);
 	let _zoom = $state(0);
 	const style = (dark: boolean): maplibre.StyleSpecification => ({
@@ -204,7 +212,17 @@
 <div id="box">
 	<h1>Happy Holidays from Philadelphia, PA!</h1>
 	<div id="container">
-		<!-- TODO: seasons greetings, overview of concept -->
+		<dialog bind:this={dialog} id="seasons-greetings" style="text-align: center;">
+			<p>
+				It's been a big year: we bought a house in West Philadelphia! It looks like we'll be in this
+				city for a while.
+			</p>
+			<p>Here's a map of are the places nearby that we've come to love.</p>
+			<p>— Steven & Emma</p>
+			<form method="dialog" style="width: 100%; display: flex">
+				<button autofocus style="margin: auto;">Explore</button>
+			</form>
+		</dialog>
 		<div id="map"></div>
 		<div id="info">
 			<!-- infobar -->
@@ -259,6 +277,28 @@
 </div>
 
 <style>
+	dialog {
+		z-index: 1;
+	}
+	::backdrop {
+		margin-top: 79.68px;
+		background-image: linear-gradient(
+			45deg,
+			#9e0142,
+			#d53e4f,
+			#f46d43,
+			#fdae61,
+			#fee08b,
+			#ffffbf,
+			#e6f598,
+			#abdda4,
+			#66c2a5,
+			#3288bd,
+			#5e4fa2
+		);
+		opacity: 0.75;
+	}
+
 	#box {
 		display: flex;
 		flex-direction: column;
@@ -291,7 +331,11 @@
 		height: 100%;
 		/* height: 90vh; */
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 588px) {
+		::backdrop {
+			position: relative;
+			margin-top: 116.48px;
+		}
 		#container {
 			display: block;
 		}
