@@ -210,7 +210,7 @@
 </script>
 
 <div id="box">
-	<h1>Happy Holidays from Philadelphia, PA!</h1>
+	<h1>Happy New Year from Philadelphia, PA!</h1>
 	<div id="container">
 		<dialog bind:this={dialog} id="seasons-greetings" style="text-align: center;">
 			<p>

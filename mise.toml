@@ -6,4 +6,4 @@ _.path = [
 ]
 
 [tools]
-node = "24"
+node = "22"
