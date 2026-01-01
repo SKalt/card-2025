@@ -63,11 +63,11 @@
 		books: '#66c2a5',
 		cat: 'black',
 		bar: '#abdda4',
-		music: '#e6f598',
-		pizza: '#d53e4f', // 'red',
+		music: '#d53e4f',
+		pizza: '#d53e4f',
 		fitness: 'black',
 		park: '#66c2a5',
-		art: '#e6f598',
+		art: '#fdae61',
 		historic: '#fdae61',
 
 		cinema: '#e6f598',
@@ -109,7 +109,7 @@
 	).reduce(
 		(a, [t, cs]) => {
 			let color = Object.entries(cs).sort(([, a], [, b]) => (b > a ? 1 : b < a ? -1 : 1))[0][0];
-			const dark = ['black', '#5e4fa2', '#3288bd'];
+			const dark = ['black', '#5e4fa2', '#3288bd', '#d53e4f'];
 			a[t] = [dark.includes(color) ? '#fff' : '#000', color];
 			return a;
 		},
@@ -151,48 +151,56 @@
 		Object.entries(icons).map(async ([name, marker]) => {
 			m.addImage(name, await img(marker), { sdf: true });
 		});
+		const addLayers = () => {
+			const src = 'attractions';
+			m.addSource(src, {
+				type: 'geojson',
+				data: rawData
+			});
+			m.addLayer({
+				id: `${src}-layer`,
+				source: src,
+				type: 'symbol',
+				paint: {
+					'icon-color': [
+						'case',
+						...((() => {
+							type Icon = keyof typeof icons;
+							const eq = (icon: Icon) => ['==', ['get', 'icon'], icon];
+							return Object.entries(iconColors).flatMap(([icon, color]) => [
+								eq(icon as Icon),
+								color
+							]);
+						})() as any),
+						'black'
+					] as maplibre.DataDrivenPropertyValueSpecification<string>
+				},
+				layout: {
+					'icon-image': ['coalesce', ['image', ['get', 'icon']], ['image', 'marker']],
+					'icon-size': ['step', ['zoom'], 0.1, 12, 0.15, 14, 0.2],
+					'icon-overlap': 'cooperative'
+				},
+				filter: [
+					'case',
+					['==', ['to-string', ['global-state', 'tag']], ''],
+					true,
+					['in', ['global-state', 'tag'], ['get', 'tags']]
+				]
+			});
+		};
 		_darkMode.addEventListener('change', (e) => {
 			darkTheme = e.matches;
 			if (m.loaded()) {
+				m.setStyle;
 				m.style.setState(style(darkTheme));
+				addLayers();
 				m.redraw(); // <- doesn't work; map stays in previous color scheme
 				m.setZoom(m.getZoom() + 0.01); // yet this does
 			}
 		});
 		m.on('error', (e) => console.error(e));
 		await forEvent(m, 'load');
-		const src = 'attractions';
-		m.addSource(src, {
-			type: 'geojson',
-			data: rawData
-		});
-		m.addLayer({
-			id: `${src}-layer`,
-			source: src,
-			type: 'symbol',
-			paint: {
-				'icon-color': [
-					'case',
-					...((() => {
-						type Icon = keyof typeof icons;
-						const eq = (icon: Icon) => ['==', ['get', 'icon'], icon];
-						return Object.entries(iconColors).flatMap(([icon, color]) => [eq(icon as Icon), color]);
-					})() as any),
-					'black'
-				] as maplibre.DataDrivenPropertyValueSpecification<string>
-			},
-			layout: {
-				'icon-image': ['coalesce', ['image', ['get', 'icon']], ['image', 'marker']],
-				'icon-size': ['step', ['zoom'], 0.1, 12, 0.15, 14, 0.2],
-				'icon-overlap': 'cooperative'
-			},
-			filter: [
-				'case',
-				['==', ['to-string', ['global-state', 'tag']], ''],
-				true,
-				['in', ['global-state', 'tag'], ['get', 'tags']]
-			]
-		});
+		addLayers();
 		m.on('mouseenter', 'attractions-layer', (e) => {
 			m.getCanvas().style.cursor = 'pointer';
 		});
