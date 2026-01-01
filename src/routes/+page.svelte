@@ -12,15 +12,8 @@
 	maplibre.addProtocol('pmtiles', proto.tile);
 	let darkTheme = $state(false);
 	let dialog: HTMLDialogElement | null = $state(null);
-	onMount(() => {
-		const key = 'dialog';
-		// if (!localStorage.getItem(key)) {
-		dialog?.showModal();
-		// }
-		// localStorage.setItem(key, 'done');
-	});
+	onMount(() => dialog?.showModal());
 	let _map: maplibre.Map | null = $state(null);
-	let _zoom = $state(0);
 	const style = (dark: boolean): maplibre.StyleSpecification => ({
 		version: 8,
 		sources: {
@@ -41,7 +34,6 @@
 		i.src = svgURI;
 		await p;
 		return i;
-		// return { data: i, width, height };
 	};
 	type Props = { description: string; tags: string[]; name: string; icon: string };
 	const rawData: FeatureCollection<Point, Props> = d as any;
@@ -94,6 +86,12 @@
 		shop: 'tan',
 		theatre: '#e6f598'
 	};
+	const _select = (loc: Feature<Point, Props> | null) => {
+		selectedLocation = loc;
+		if (selectedLocation && typeof selectedLocation.properties.tags === 'string') {
+			selectedLocation.properties.tags = JSON.parse(selectedLocation.properties.tags as any);
+		}
+	};
 	const tagColors = Object.entries(
 		rawData.features
 			.map((f) => [f.properties.tags, iconColors[f.properties.icon as Icon]] as [string[], string])
@@ -124,7 +122,10 @@
 	const handleSearchInput = (e: Event) => {
 		if ((e as InputEvent).inputType == 'insertReplacementText') {
 			// an option was selected
-			const f = rawData.features.find((f) => f.properties.name === (e as InputEvent).data)!;
+			const query = (e as InputEvent).data;
+			if (!query) return;
+			const f = rawData.features.find((f) => f.properties.name === query)!;
+			_select(f);
 			_map?.easeTo({
 				zoom: 20,
 				center: {
@@ -147,9 +148,9 @@
 			style: style(darkTheme)
 		};
 		const m = new maplibre.Map(config);
-		Object.entries(icons).map(async ([name, marker]) =>
-			m.addImage(name, await img(marker), { sdf: true })
-		);
+		Object.entries(icons).map(async ([name, marker]) => {
+			m.addImage(name, await img(marker), { sdf: true });
+		});
 		_darkMode.addEventListener('change', (e) => {
 			darkTheme = e.matches;
 			if (m.loaded()) {
@@ -160,30 +161,28 @@
 		});
 		m.on('error', (e) => console.error(e));
 		await forEvent(m, 'load');
-		console.log(rawData);
 		const src = 'attractions';
 		m.addSource(src, {
 			type: 'geojson',
 			data: rawData
 		});
 		m.addLayer({
-			id: 'attractions-layer',
-			type: 'symbol',
+			id: `${src}-layer`,
 			source: src,
+			type: 'symbol',
 			paint: {
 				'icon-color': [
 					'case',
 					...((() => {
 						type Icon = keyof typeof icons;
 						const eq = (icon: Icon) => ['==', ['get', 'icon'], icon];
-						const cx = (icon: Icon) => [eq(icon), iconColors[icon]];
 						return Object.entries(iconColors).flatMap(([icon, color]) => [eq(icon as Icon), color]);
 					})() as any),
 					'black'
 				] as maplibre.DataDrivenPropertyValueSpecification<string>
 			},
 			layout: {
-				'icon-image': ['get', 'icon'],
+				'icon-image': ['coalesce', ['image', ['get', 'icon']], ['image', 'marker']],
 				'icon-size': ['step', ['zoom'], 0.1, 12, 0.15, 14, 0.2],
 				'icon-overlap': 'cooperative'
 			},
@@ -200,12 +199,9 @@
 		m.on('mouseleave', 'attractions-layer', (e) => {
 			m.getCanvas().style.cursor = '';
 		});
-		m.on('click', 'attractions-layer', (e) => {
-			selectedLocation = (e.features?.[0] as any) ?? null;
-			if (selectedLocation)
-				selectedLocation.properties.tags = JSON.parse(selectedLocation.properties.tags as any);
-		});
+		m.on('click', 'attractions-layer', (e) => _select((e.features?.[0] as any) ?? null));
 		_map = m;
+		(window as any)._map = m;
 	});
 </script>
 
@@ -230,7 +226,6 @@
 			{#if selectedLocation}
 				<h2>{selectedLocation.properties.name}</h2>
 				<p>{@html selectedLocation.properties.description}</p>
-
 				<strong>Tags:</strong>
 
 				{#each selectedLocation.properties.tags as tag, i (tag)}
