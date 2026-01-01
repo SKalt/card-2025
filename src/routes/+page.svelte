@@ -169,7 +169,9 @@
 							const eq = (icon: Icon) => ['==', ['get', 'icon'], icon];
 							return Object.entries(iconColors).flatMap(([icon, color]) => [
 								eq(icon as Icon),
-								color
+								['cat', 'marker'].includes(icon)
+									? ['case', ['==', ['global-state', 'dark'], true], '#fdae61', color]
+									: color
 							]);
 						})() as any),
 						'black'
@@ -191,7 +193,7 @@
 		_darkMode.addEventListener('change', (e) => {
 			darkTheme = e.matches;
 			if (m.loaded()) {
-				m.setStyle;
+				m.setGlobalStateProperty('dark', darkTheme);
 				m.style.setState(style(darkTheme));
 				addLayers();
 				m.redraw(); // <- doesn't work; map stays in previous color scheme
@@ -200,6 +202,7 @@
 		});
 		m.on('error', (e) => console.error(e));
 		await forEvent(m, 'load');
+		m.setGlobalStateProperty('dark', darkTheme);
 		addLayers();
 		m.on('mouseenter', 'attractions-layer', (e) => {
 			m.getCanvas().style.cursor = 'pointer';
